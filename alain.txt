@@ -1,1 +1,14 @@
-nouvelle
+import numpy as np
+import pandas as pd
+
+f = ("70-04.xls")
+
+start = datetime(1970, 1, 1)
+end = datetime(2004, 12, 31)
+
+location = Point(49.2497, -123.1193, 70)
+
+f = Daily(location, start, end)
+f = f.fetch()
+f.plot(y=['tavg', 'tmin', 'tmax'])
+plt.show()
